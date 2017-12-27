@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def softmax(x):
     """Compute the softmax function for each row of the input x.
 
@@ -31,12 +30,16 @@ def softmax(x):
     if len(x.shape) > 1:
         # Matrix
         ### YOUR CODE HERE
-        raise NotImplementedError
+        maxval = np.max(x,axis=1,keepdims=True)
+        temp = np.exp(x-maxval)
+        x = temp/np.sum(temp,axis=1,keepdims=True)
         ### END YOUR CODE
     else:
         # Vector
         ### YOUR CODE HERE
-        raise NotImplementedError
+        maxval = np.max(x)
+        temp = np.exp(x-maxval)
+        x = temp/np.sum(temp)
         ### END YOUR CODE
 
     assert x.shape == orig_shape
