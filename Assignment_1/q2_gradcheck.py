@@ -48,6 +48,8 @@ def gradcheck_naive(f, x):
             print "Your gradient: %f \t Numerical gradient: %f" % (
                 grad[ix], numgrad)
             return
+        # print "Your gradient: %f \t Numerical gradient: %f reldiff %f" % (
+            # grad[ix], numgrad,reldiff)
 
         it.iternext() # Step to next dimension
 
