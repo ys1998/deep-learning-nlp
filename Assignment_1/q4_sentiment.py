@@ -65,9 +65,9 @@ def getRegularizationValues():
     """
     values = None   # Assign a list of floats in the block below
     ### YOUR CODE HERE
-    N_VALUES = 5
+    N_VALUES = 30
     # Using random search in logarithmic space
-    values = [10**x for x in np.random.uniform(-3,3,N_VALUES)]
+    values = [10**x for x in np.random.uniform(0,0.5,N_VALUES)]
     ### END YOUR CODE
     return sorted(values)
 
